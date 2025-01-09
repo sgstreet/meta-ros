@@ -1,5 +1,7 @@
 # Copyright (c) 2024 Wind River Systems, Inc.
 
+inherit ${@bb.utils.contains("MACHINE_FEATURES", "cuda", "cuda", "", d)}
+
 ROS_BUILDTOOL_DEPENDS += " \
     ament-cmake-ros \
     ament-cmake-gmock \
