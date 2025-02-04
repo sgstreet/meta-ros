@@ -2,6 +2,8 @@
 
 LICENSE = "Apache-2.0"
 
+inherit ${@bb.utils.contains("MACHINE_FEATURES", "cuda", "cuda", "", d)}
+
 ROS_BUILDTOOL_DEPENDS += " \
     ament-cmake-ros \
     ament-cmake-gmock \
